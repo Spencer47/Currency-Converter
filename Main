@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+class Main  {
+
+    public static void main(String[] args){
+        double USD_Value = 0;
+        Scanner UserSelectedCurrency = new Scanner(System.in);
+        System.out.println("What would you like to convert your USD to?");
+        String currency = UserSelectedCurrency.next().toLowerCase();
+
+        if (currency.equals("euro")) {
+            System.out.println("The currency you chose to convert to was the euro.");
+            System.out.println("Enter the desired amount of United States dollars to convert.");
+
+            Scanner userInput2 = new Scanner(System.in);
+            String userInput = userInput2.next().toLowerCase();
+            try{
+                USD_Value = Double.parseDouble(userInput);
+            }
+           catch(NumberFormatException Fortnite){
+                System.out.println("An error has occurred.");
+                System.out.println("The value you entered contains an unconvertable data type, such as a letter or special character.");
+                System.exit(0);}
+            double Converted_Value = USD_Value * 0.874270;
+            double Final_Value = Math.round(Converted_Value * 100.0) / 100.0;
+
+System.out.println(USD_Value + " " + "United States dollar(s) is equal to" + " " + Final_Value + " " + "Euro.");
+
+        //////////////////////////////////////////////////////////////////////
+
+        } else if (currency.equals("peso")) {
+            System.out.println("The currency you chose to convert to was the peso.");
+
+            System.out.println("Enter the desired amount of United States dollars to convert.");
+
+            Scanner userInput2 = new Scanner(System.in);
+            String userInput = userInput2.next().toLowerCase();
+            try{
+                USD_Value = Double.parseDouble(userInput);
+            }
+            catch(NumberFormatException Fortnite){
+                System.out.println("An error has occurred.");
+                System.out.println("The value you entered contains an unconvertable data type, such as a letter or special character.");
+                System.exit(0);}
+            double Converted_Value = USD_Value * 0.874270;
+            double Final_Value = Math.round(Converted_Value * 100.0) / 100.0;
+
+System.out.println(USD_Value + " " + "United States dollar(s) is equal to" + " " + Final_Value + " " + "Peso.");
+
+        } else {
+            System.out.println("An error has occurred.");
+            System.out.println("You may have chosen an incompatible or unsupported currency.");
+            System.out.println("If you believe this to not be the case, check for any errors in spelling.");
+            System.out.println("Currently supported currencies: Euro, Peso.");
+        }
+    }
+}
